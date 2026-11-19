@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "scale": 100,
   "criteria": [
     "perks",
@@ -8,29 +8,29 @@
   ],
   "list": [
     {
-      "id": "filesun",
-      "rank": 1,
-      "prev": 1,
-      "isNew": false,
-      "total": 85.44,
-      "stars": 4.8,
-      "items": {
-        "perks": 42.21,
-        "web_rank": 23.75,
-        "web_trend": 19.48
-      }
-    },
-    {
       "id": "kdisk",
-      "rank": 2,
+      "rank": 1,
       "prev": 2,
       "isNew": false,
-      "total": 85.04,
+      "total": 85.16,
       "stars": 4.8,
       "items": {
         "perks": 34.03,
         "web_rank": 21.25,
-        "web_trend": 29.76
+        "web_trend": 29.88
+      }
+    },
+    {
+      "id": "filesun",
+      "rank": 2,
+      "prev": 1,
+      "isNew": false,
+      "total": 85.1,
+      "stars": 4.8,
+      "items": {
+        "perks": 42.21,
+        "web_rank": 23.75,
+        "web_trend": 19.14
       }
     },
     {
@@ -38,12 +38,12 @@
       "rank": 3,
       "prev": 3,
       "isNew": false,
-      "total": 81.21,
+      "total": 80.98,
       "stars": 4.7,
       "items": {
         "perks": 43.42,
-        "web_rank": 18.77,
-        "web_trend": 19.02
+        "web_rank": 18.76,
+        "web_trend": 18.8
       }
     },
     {
@@ -51,38 +51,38 @@
       "rank": 4,
       "prev": 4,
       "isNew": false,
-      "total": 78.09,
+      "total": 77.78,
       "stars": 4.7,
       "items": {
         "perks": 34.03,
         "web_rank": 25,
-        "web_trend": 19.06
-      }
-    },
-    {
-      "id": "ggulfile",
-      "rank": 5,
-      "prev": 5,
-      "isNew": false,
-      "total": 77.02,
-      "stars": 4.7,
-      "items": {
-        "perks": 30.27,
-        "web_rank": 19.95,
-        "web_trend": 26.8
+        "web_trend": 18.75
       }
     },
     {
       "id": "filemong",
-      "rank": 6,
+      "rank": 5,
       "prev": 6,
       "isNew": false,
-      "total": 76.86,
-      "stars": 4.7,
+      "total": 76.58,
+      "stars": 4.6,
       "items": {
         "perks": 45,
         "web_rank": 13.76,
-        "web_trend": 18.1
+        "web_trend": 17.82
+      }
+    },
+    {
+      "id": "ggulfile",
+      "rank": 6,
+      "prev": 5,
+      "isNew": false,
+      "total": 76.27,
+      "stars": 4.6,
+      "items": {
+        "perks": 30.27,
+        "web_rank": 19.98,
+        "web_trend": 26.02
       }
     },
     {
@@ -90,12 +90,12 @@
       "rank": 7,
       "prev": 7,
       "isNew": false,
-      "total": 74.23,
+      "total": 74.39,
       "stars": 4.6,
       "items": {
         "perks": 45,
         "web_rank": 11.25,
-        "web_trend": 17.98
+        "web_trend": 18.14
       }
     },
     {
@@ -103,12 +103,12 @@
       "rank": 8,
       "prev": 8,
       "isNew": false,
-      "total": 73.19,
+      "total": 72.92,
       "stars": 4.6,
       "items": {
         "perks": 31.91,
         "web_rank": 22.5,
-        "web_trend": 18.78
+        "web_trend": 18.51
       }
     },
     {
@@ -116,12 +116,12 @@
       "rank": 9,
       "prev": 9,
       "isNew": false,
-      "total": 72.96,
+      "total": 72.58,
       "stars": 4.6,
       "items": {
         "perks": 36.04,
         "web_rank": 17.51,
-        "web_trend": 19.41
+        "web_trend": 19.03
       }
     },
     {
@@ -129,12 +129,12 @@
       "rank": 10,
       "prev": 10,
       "isNew": false,
-      "total": 70.89,
+      "total": 70.71,
       "stars": 4.6,
       "items": {
         "perks": 36.04,
-        "web_rank": 15.95,
-        "web_trend": 18.9
+        "web_rank": 16.1,
+        "web_trend": 18.57
       }
     },
     {
@@ -142,12 +142,12 @@
       "rank": 11,
       "prev": null,
       "isNew": false,
-      "total": 67.74,
+      "total": 67.31,
       "stars": 4.5,
       "items": {
         "perks": 42.21,
-        "web_rank": 6.55,
-        "web_trend": 18.98
+        "web_rank": 6.4,
+        "web_trend": 18.7
       }
     },
     {
@@ -155,12 +155,12 @@
       "rank": 12,
       "prev": null,
       "isNew": false,
-      "total": 61.49,
+      "total": 61.69,
       "stars": 4.4,
       "items": {
         "perks": 34.03,
-        "web_rank": 7.17,
-        "web_trend": 20.29
+        "web_rank": 7.34,
+        "web_trend": 20.32
       }
     },
     {
@@ -168,12 +168,12 @@
       "rank": 13,
       "prev": null,
       "isNew": false,
-      "total": 57.45,
+      "total": 57.1,
       "stars": 4.4,
       "items": {
         "perks": 25.18,
-        "web_rank": 15.33,
-        "web_trend": 16.94
+        "web_rank": 15.17,
+        "web_trend": 16.75
       }
     },
     {
@@ -181,12 +181,12 @@
       "rank": 14,
       "prev": null,
       "isNew": false,
-      "total": 49.76,
+      "total": 49.58,
       "stars": 4.2,
       "items": {
         "perks": 18.61,
         "web_rank": 12.5,
-        "web_trend": 18.65
+        "web_trend": 18.47
       }
     },
     {
@@ -194,12 +194,12 @@
       "rank": 15,
       "prev": null,
       "isNew": false,
-      "total": 47.6,
+      "total": 47.29,
       "stars": 4.2,
       "items": {
         "perks": 18.61,
-        "web_rank": 8.74,
-        "web_trend": 20.25
+        "web_rank": 8.75,
+        "web_trend": 19.93
       }
     },
     {
@@ -207,12 +207,12 @@
       "rank": 16,
       "prev": null,
       "isNew": false,
-      "total": 44.35,
+      "total": 43.57,
       "stars": 4.2,
       "items": {
         "perks": 25.18,
         "web_rank": 2.5,
-        "web_trend": 16.67
+        "web_trend": 15.89
       }
     },
     {
@@ -220,11 +220,11 @@
       "rank": 17,
       "prev": null,
       "isNew": false,
-      "total": 38.33,
+      "total": 38.3,
       "stars": 4.1,
       "items": {
         "perks": 30.27,
-        "web_rank": 5.06,
+        "web_rank": 5.03,
         "web_trend": 3
       }
     },
@@ -233,12 +233,12 @@
       "rank": 18,
       "prev": null,
       "isNew": false,
-      "total": 32.5,
+      "total": 32.22,
       "stars": 4,
       "items": {
         "perks": 4.5,
         "web_rank": 10,
-        "web_trend": 18
+        "web_trend": 17.72
       }
     },
     {
@@ -246,12 +246,12 @@
       "rank": 19,
       "prev": null,
       "isNew": false,
-      "total": 25.03,
+      "total": 24.46,
       "stars": 3.9,
       "items": {
         "perks": 4.5,
         "web_rank": 3.75,
-        "web_trend": 16.78
+        "web_trend": 16.21
       }
     }
   ],
