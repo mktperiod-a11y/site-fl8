@@ -170,11 +170,6 @@ function footer(depth) {
         ' ',
         h('a', { href: `${r}guide/` }, '기준 안내'),
       ),
-      h(
-        'nav',
-        { class: 'va-foot__vendors', 'aria-label': '웹하드 목록' },
-        shown.map((e) => h('a', { href: `${r}webhard/${e.id}/` }, byId.get(e.id).name)),
-      ),
       h('p', `순위와 혜택은 참고용이에요. 서비스 이용 조건은 각 공식 사이트 안내를 따라요. ${cadence.word} 갱신해요.`),
       affiliate ? h('p', '일부 바로가기는 제휴 링크예요.') : null,
       h('p', { class: 'va-foot__copy' }, `© ${Y} ${site.brand}`),
@@ -303,46 +298,8 @@ function filterViews() {
   return views;
 }
 
-function moreList(r, list) {
-  if (!list.length) return null;
-  return h(
-    'details',
-    { class: 'va-more', 'data-keep': 'more' },
-    h('summary', `다른 웹하드 ${list.length}곳`),
-    h(
-      'ul',
-      { class: 'va-more__list' },
-      list.map((e) => {
-        const v = byId.get(e.id);
-        return h(
-          'li',
-          { class: 'va-mini' },
-          h('span', { class: 'va-ico va-ico--sm' }, icon(v, r, 32)),
-          h('div', { class: 'va-body' }, h('p', { class: 'va-name' }, h('span', v.name)), h('p', { class: 'va-perk' }, perkText(v))),
-          h(
-            'p',
-            { class: 'va-mini__acts' },
-            h('a', { class: 'va-textbtn', href: `${r}webhard/${v.id}/` }, '상세'),
-            v.url ? h('a', { class: 'va-textbtn', href: goHref(v, r), rel: rel_(v) }, '사이트') : null,
-          ),
-        );
-      }),
-    ),
-  );
-}
-
 function pageHead(title, lede, extra) {
   return h('div', { class: 'va-head' }, h('h1', title), lede ? h('p', { class: 'va-lede' }, lede) : null, extra || null);
-}
-
-function criteriaCard(r) {
-  return h(
-    'section',
-    { class: 'va-card', 'aria-labelledby': 'how-title' },
-    h('h2', { id: 'how-title' }, '순위는 어떻게 정하나요?'),
-    h('dl', { class: 'va-crit' }, criteria.map((k) => [h('dt', CRITERIA[k].label), h('dd', CRITERIA[k].desc)])),
-    h('p', { class: 'va-card__more' }, h('a', { href: `${r}guide/` }, '기준 자세히 보기')),
-  );
 }
 
 function groupsWithVendors() {
@@ -360,23 +317,6 @@ function perkChipsNav(r, current) {
     h('a', { class: 'va-chip', href: `${r}benefits/`, 'aria-current': current === '' ? 'page' : null }, '전체'),
     groups.map((g) =>
       h('a', { class: 'va-chip', href: `${r}benefits/${g.slug}/`, 'aria-current': current === g.slug ? 'page' : null }, g.label),
-    ),
-  );
-}
-
-function changesBox() {
-  const moved = top.filter((e) => e.isNew || (e.prev && e.prev !== e.rank));
-  if (!moved.length) return null;
-  return h(
-    'section',
-    { class: 'va-card va-card--change', 'aria-labelledby': 'chg-title' },
-    h('h2', { id: 'chg-title' }, '이번 갱신에서 바뀐 순위'),
-    h(
-      'ul',
-      { class: 'va-chg' },
-      moved.map((e) =>
-        h('li', h('span', byId.get(e.id).name), h('span', { class: 'va-chg__to' }, `${e.rank}위`), move(e)),
-      ),
     ),
   );
 }
@@ -400,17 +340,6 @@ function faqBlock(withLd) {
       ? { '@type': 'FAQPage', mainEntity: items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
       : null,
   };
-}
-
-function statusLine() {
-  return h(
-    'p',
-    { class: 'va-status' },
-    h('span', { class: 'va-status__dot', 'aria-hidden': 'true' }),
-    h('time', { datetime: ranking.date }, `${dateKo} 갱신`),
-    h('span', { class: 'va-status__sep', 'aria-hidden': 'true' }, '·'),
-    h('span', `${cadence.word} 갱신`),
-  );
 }
 
 // ---------- home ----------

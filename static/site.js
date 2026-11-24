@@ -11,20 +11,6 @@
     window.location.href = row.getAttribute('data-href');
   });
 
-  // remember the "other vendors" panel state
-  var keepers = document.querySelectorAll('details[data-keep]');
-  keepers.forEach(function (d) {
-    var key = 'keep:' + d.getAttribute('data-keep');
-    try {
-      if (window.localStorage.getItem(key) === '1') d.open = true;
-    } catch (e) {}
-    d.addEventListener('toggle', function () {
-      try {
-        window.localStorage.setItem(key, d.open ? '1' : '0');
-      } catch (e) {}
-    });
-  });
-
   // back to top: shown after scrolling well down or at the bottom
   var btn = document.querySelector('.va-totop');
   if (!btn) return;

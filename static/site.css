@@ -10,7 +10,6 @@
   font-weight: 600 800;
   font-display: swap;
 }
-
 :root {
   --va-key: #e72354;
   --va-key-strong: #c81945;
@@ -38,7 +37,6 @@
   --va-top-h: 56px;
   --va-font: "PD", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
-
 *,
 *::before,
 *::after {
@@ -117,16 +115,12 @@ ul {
   margin: 0 auto;
   padding: 0 var(--va-gutter);
 }
-
-/* state layer: hover 8%, focus/press 10% of the text colour */
 .va-tab,
 .va-go,
 .va-cta,
 .va-chip,
-.va-textbtn,
 .va-other,
 .va-totop,
-.va-more > summary,
 .js .va-row,
 .js .va-prow {
   position: relative;
@@ -135,10 +129,8 @@ ul {
 .va-go::after,
 .va-cta::after,
 .va-chip::after,
-.va-textbtn::after,
 .va-other::after,
 .va-totop::after,
-.va-more > summary::after,
 .js .va-row::after,
 .js .va-prow::after {
   content: "";
@@ -153,10 +145,8 @@ ul {
 .va-go:hover::after,
 .va-cta:hover::after,
 .va-chip:hover::after,
-.va-textbtn:hover::after,
 .va-other:hover::after,
 .va-totop:hover::after,
-.va-more > summary:hover::after,
 .js .va-row:hover::after,
 .js .va-prow:hover::after {
   opacity: 0.08;
@@ -165,23 +155,16 @@ ul {
 .va-go:focus-visible::after,
 .va-cta:focus-visible::after,
 .va-chip:focus-visible::after,
-.va-textbtn:focus-visible::after,
 .va-other:focus-visible::after,
 .va-totop:focus-visible::after,
-.va-more > summary:focus-visible::after,
 .va-go:active::after,
 .va-cta:active::after,
 .va-chip:active::after,
-.va-textbtn:active::after,
 .va-other:active::after,
 .va-totop:active::after {
   opacity: 0.1;
 }
-
-/* single-column grids never grow past their container */
 .va-list,
-.va-chg,
-.va-crit,
 .va-perks,
 .va-faq__list,
 .va-others__list,
@@ -190,8 +173,6 @@ ul {
 .va-grid2 {
   grid-template-columns: minmax(0, 1fr);
 }
-
-/* header */
 .va-top {
   position: sticky;
   top: 0;
@@ -243,8 +224,6 @@ ul {
   color: var(--va-text);
   box-shadow: inset 0 -2px 0 var(--va-key);
 }
-
-/* main + page head */
 .va-main {
   padding-top: var(--va-gap-lg);
   padding-bottom: var(--va-block);
@@ -277,25 +256,6 @@ ul {
   line-height: 1.4;
   font-weight: 700;
 }
-
-/* columns */
-.va-cols {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--va-gap-lg);
-}
-.va-colmain {
-  min-width: 0;
-}
-.va-side {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-content: start;
-  gap: var(--va-gap);
-  min-width: 0;
-}
-
-/* status line */
 .va-status {
   display: flex;
   align-items: center;
@@ -315,8 +275,6 @@ ul {
   border-radius: 50%;
   background: var(--va-key);
 }
-
-/* ranking rows */
 .va-list {
   display: grid;
   gap: 0;
@@ -409,14 +367,22 @@ ul {
   font-weight: 800;
   font-size: 18px;
 }
-.va-ini--0 { background: #1f4e8c; }
-.va-ini--1 { background: #155e4a; }
-.va-ini--2 { background: #6b2f8a; }
-.va-ini--3 { background: #8a3b12; }
-.va-ini--4 { background: #0f5a6e; }
-.va-ini--5 { background: #4a4a12; }
-.va-ini--6 { background: #7a1f3d; }
-.va-ini--7 { background: #2f3f7a; }
+.va-ini--0 { background: #1f4e8c;
+}
+.va-ini--1 { background: #155e4a;
+}
+.va-ini--2 { background: #6b2f8a;
+}
+.va-ini--3 { background: #8a3b12;
+}
+.va-ini--4 { background: #0f5a6e;
+}
+.va-ini--5 { background: #4a4a12;
+}
+.va-ini--6 { background: #7a1f3d;
+}
+.va-ini--7 { background: #2f3f7a;
+}
 .va-row .va-ico,
 .va-prow .va-ico,
 .va-other .va-ico {
@@ -538,70 +504,6 @@ ul {
   color: var(--va-faint);
   border-style: solid;
 }
-
-/* more list */
-.va-more {
-  margin-top: var(--va-gap);
-}
-.va-more > summary {
-  display: flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 4px;
-  color: var(--va-text);
-  font-weight: 700;
-  cursor: pointer;
-  list-style: none;
-}
-.va-more > summary::-webkit-details-marker {
-  display: none;
-}
-.va-more > summary::before {
-  content: "+";
-  display: inline-block;
-  width: 20px;
-  color: var(--va-sub);
-  font-weight: 700;
-}
-.va-more[open] > summary::before {
-  content: "−";
-}
-.va-mini {
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr) auto;
-  column-gap: 12px;
-  align-items: center;
-  padding: 8px 4px;
-  border-top: 1px solid var(--va-line);
-}
-.va-mini .va-body {
-  min-width: 0;
-}
-.va-mini .va-name {
-  font-size: 15px;
-}
-.va-mini .va-perk {
-  font-size: 13px;
-}
-.va-mini__acts {
-  display: flex;
-}
-.va-textbtn {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  min-width: 44px;
-  justify-content: center;
-  padding: 0 8px;
-  border-radius: var(--va-radius);
-  color: var(--va-sub);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* cards */
 .va-card {
   padding: 20px;
   border: 1px solid var(--va-line);
@@ -626,48 +528,6 @@ ul {
   font-weight: 600;
   text-underline-offset: 3px;
 }
-.va-crit {
-  display: grid;
-  gap: 4px;
-}
-.va-crit dt {
-  margin-top: 8px;
-  font-size: 15px;
-  font-weight: 700;
-}
-.va-crit dt:first-child {
-  margin-top: 0;
-}
-.va-crit dd {
-  color: var(--va-sub);
-  font-size: 14px;
-  line-height: 1.6;
-}
-.va-chg {
-  display: grid;
-  gap: 4px;
-}
-.va-chg li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 28px;
-  font-size: 15px;
-}
-.va-chg li > span:first-child {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.va-chg__to {
-  flex: none;
-  margin-left: auto;
-  color: var(--va-sub);
-  font-variant-numeric: tabular-nums;
-}
-
-/* chips (segmented, all visible) */
 .va-seg {
   display: flex;
   flex-wrap: wrap;
@@ -691,8 +551,6 @@ ul {
   background: var(--va-key-tint);
   color: var(--va-key-ink);
 }
-
-/* FAQ */
 .va-faq {
   margin-top: var(--va-block);
 }
@@ -726,8 +584,6 @@ ul {
   font-size: 15px;
   line-height: 1.65;
 }
-
-/* vendor page */
 .va-crumb {
   display: flex;
   flex-wrap: wrap;
@@ -754,11 +610,6 @@ ul {
   font-size: 26px;
   line-height: 1.3;
   font-weight: 800;
-}
-.va-wide {
-  max-width: 100%;
-  height: auto;
-  margin-top: 6px;
 }
 .va-vstat {
   grid-column: 1 / -1;
@@ -896,8 +747,6 @@ ul {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-/* guide */
 .va-sec + .va-sec,
 .va-sec + .va-faq,
 .va-faq + .va-sec {
@@ -950,8 +799,6 @@ ul {
 .va-table td:last-child {
   color: var(--va-sub);
 }
-
-/* perks pages */
 .va-plist {
   display: grid;
 }
@@ -1002,8 +849,6 @@ ul {
   color: var(--va-sub);
   font-size: 14px;
 }
-
-/* footer */
 .va-foot {
   border-top: 1px solid var(--va-line);
   background: var(--va-surface);
@@ -1031,8 +876,6 @@ ul {
   min-height: 44px;
   text-underline-offset: 3px;
 }
-
-/* back to top */
 .va-totop {
   position: fixed;
   right: 16px;
@@ -1051,104 +894,92 @@ ul {
 .va-totop[hidden] {
   display: none;
 }
-
 @media (min-width: 600px) {
   .va-row .va-ico,
   .va-prow .va-ico {
-    width: 104px;
-    height: 40px;
+      width: 104px;
+      height: 40px;
   }
   .va-row--top .va-ico {
-    width: 120px;
-    height: 44px;
+      width: 120px;
+      height: 44px;
   }
   .va-top__in {
-    flex-wrap: nowrap;
-    min-height: var(--va-top-h);
+      flex-wrap: nowrap;
+      min-height: var(--va-top-h);
   }
   .va-tabs {
-    width: auto;
-    margin: 0;
-    padding: 0;
-    border-top: 0;
-    align-self: stretch;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      border-top: 0;
+      align-self: stretch;
   }
   .va-tab {
-    flex: none;
-    min-height: var(--va-top-h);
+      flex: none;
+      min-height: var(--va-top-h);
   }
   .va-main {
-    padding-top: 40px;
+      padding-top: 40px;
   }
   .va-head h1 {
-    font-size: 30px;
+      font-size: 30px;
   }
   .va-lede {
-    font-size: 15px;
+      font-size: 15px;
   }
   .va-row {
-    grid-template-columns: 36px 104px minmax(0, 1fr) 96px 104px;
-    grid-template-areas:
-      "rank ico name score go"
-      "rank ico perk score go";
-    column-gap: 16px;
-    padding: 14px 8px;
+      grid-template-columns: 36px 104px minmax(0, 1fr) 96px 104px;
+      grid-template-areas:
+        "rank ico name score go"
+        "rank ico perk score go";
+      column-gap: 16px;
+      padding: 14px 8px;
   }
   .va-row--top {
-    grid-template-columns: 40px 120px minmax(0, 1fr) 104px 104px;
-    padding: 18px 16px;
+      grid-template-columns: 40px 120px minmax(0, 1fr) 104px 104px;
+      padding: 18px 16px;
   }
   .va-go {
-    align-self: center;
+      align-self: center;
   }
   .va-prow {
-    grid-template-columns: 104px minmax(0, 1fr) 104px;
-    grid-template-areas:
-      "ico name go"
-      "ico tags go";
+      grid-template-columns: 104px minmax(0, 1fr) 104px;
+      grid-template-areas:
+        "ico name go"
+        "ico tags go";
   }
   .va-prow .va-go {
-    justify-self: end;
+      justify-self: end;
   }
   .va-vhead {
-    grid-template-columns: 168px minmax(0, 1fr) minmax(0, 360px);
+      grid-template-columns: 168px minmax(0, 1fr) minmax(0, 360px);
   }
   .va-vstat {
-    grid-column: auto;
+      grid-column: auto;
   }
   .va-grid2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .va-others__list,
   .va-critcards,
   .va-faq__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
 @media (min-width: 1024px) {
-  .va-cols {
-    grid-template-columns: minmax(0, 1fr) var(--va-side);
-    align-items: start;
-  }
-  .va-side {
-    position: sticky;
-    top: calc(var(--va-top-h) + 16px);
-  }
   .va-others__list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .va-critcards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .va-totop {
-    transition: opacity 0.15s ease;
+      transition: opacity 0.15s ease;
   }
 }
-
 .va-src {
   display: inline-block;
   min-width: 44px;
@@ -1156,8 +987,6 @@ ul {
   padding: 13px 0;
   text-underline-offset: 3px;
 }
-
-/* ---- refined hierarchy: one board, quiet controls ---- */
 .va-head h1 {
   font-size: 26px;
   letter-spacing: -0.03em;
@@ -1239,35 +1068,6 @@ ul {
 .va-go::before {
   content: none;
 }
-.va-more {
-  margin-top: 12px;
-}
-.va-more > summary {
-  color: var(--va-sub);
-  font-size: 15px;
-}
-.va-side {
-  gap: 0;
-  padding: 4px 20px;
-  border-radius: var(--va-radius-lg);
-  background: var(--va-surface);
-}
-.va-side > .va-card {
-  padding: 18px 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-}
-.va-side > .va-card + .va-card {
-  border-top: 1px solid var(--va-line);
-}
-.va-side .va-card h2 {
-  font-size: 15px;
-}
-.va-side .va-chip {
-  background: var(--va-card);
-  font-size: 13px;
-}
 .va-faq__list {
   gap: 0;
   border-top: 1px solid var(--va-line-strong);
@@ -1286,44 +1086,41 @@ ul {
 .va-faq__item p {
   font-size: 14px;
 }
-
 @media (min-width: 600px) {
   .va-head h1 {
-    font-size: 32px;
+      font-size: 32px;
   }
   .va-listhead {
-    display: grid;
-    grid-template-columns: 36px 104px minmax(0, 1fr) 96px 104px;
-    column-gap: 16px;
-    padding: 10px 8px;
-    border-bottom: 1px solid var(--va-line-strong);
-    color: var(--va-faint);
-    font-size: 12px;
-    font-weight: 600;
+      display: grid;
+      grid-template-columns: 36px 104px minmax(0, 1fr) 96px 104px;
+      column-gap: 16px;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--va-line-strong);
+      color: var(--va-faint);
+      font-size: 12px;
+      font-weight: 600;
   }
   .va-listhead span:first-child {
-    text-align: center;
+      text-align: center;
   }
   .va-listhead span:nth-child(2) {
-    grid-column: 2 / 4;
+      grid-column: 2 / 4;
   }
   .va-listhead span:nth-child(3) {
-    text-align: right;
+      text-align: right;
   }
   .va-row,
   .va-row--top {
-    padding: 14px 8px;
+      padding: 14px 8px;
   }
   .va-row--top {
-    padding-top: 18px;
-    padding-bottom: 18px;
+      padding-top: 18px;
+      padding-bottom: 18px;
   }
   .va-faq__list {
-    column-gap: 32px;
+      column-gap: 32px;
   }
 }
-
-/* ---- palette: black / pink-red / light grey ---- */
 :root {
   --va-key: #ff2d55;
   --va-key-strong: #d0103b;
@@ -1338,8 +1135,6 @@ ul {
   --va-btn: #111111;
   --va-btn2: #f2f1f5;
 }
-
-/* ---- header: larger brand ---- */
 .va-logo {
   min-height: 56px;
   gap: 10px;
@@ -1349,8 +1144,6 @@ ul {
   width: 34px;
   height: 34px;
 }
-
-/* ---- home head ---- */
 .va-head--home {
   display: flex;
   flex-wrap: wrap;
@@ -1377,8 +1170,6 @@ ul {
   flex-basis: 100%;
   margin-top: 2px;
 }
-
-/* ---- filter tabs (radio, works without script) ---- */
 .va-fin {
   position: absolute;
   width: 1px;
@@ -1444,45 +1235,23 @@ ul {
   font-size: 13px;
   color: var(--va-faint);
 }
-
-/* ---- footer ---- */
-.va-foot__vendors {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 4px;
-  margin: 4px 0 8px;
-}
-.va-foot__vendors a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  min-width: 44px;
-  padding: 0 6px;
-  color: var(--va-sub);
-  font-size: 14px;
-  text-decoration: none;
-}
 .va-foot__copy {
   color: var(--va-faint);
   font-size: 13px;
 }
-
 @media (min-width: 600px) {
   .va-logo {
-    min-height: 64px;
+      min-height: 64px;
   }
 }
-
 @media (max-width: 599px) {
   .va-ftab {
-    flex: 1 1 auto;
-    justify-content: center;
-    padding: 0 6px;
-    font-size: 14px;
+      flex: 1 1 auto;
+      justify-content: center;
+      padding: 0 6px;
+      font-size: 14px;
   }
 }
-
-/* logos without a frame; filled site buttons */
 .va-ico {
   box-shadow: none;
   background: transparent;
@@ -1493,7 +1262,6 @@ ul {
   background: var(--va-btn);
   color: #ffffff;
 }
-
 .va-ico {
   display: flex;
   align-items: center;
@@ -1505,8 +1273,6 @@ ul {
   max-width: 100%;
   max-height: 100%;
 }
-
-/* ---- semantic colours with opacity tints ---- */
 :root {
   --va-key-rgb: 255, 45, 85;
   --va-up: #d7193c;
@@ -1532,8 +1298,6 @@ ul {
 .va-row--top {
   background: var(--va-key-a04);
 }
-
-/* ---- one colour for every rank number and value ---- */
 .va-rank,
 .va-row--top .va-rank,
 .va-list > .va-row:first-child .va-rank {
@@ -1542,8 +1306,6 @@ ul {
 .va-list > .va-row:first-child .va-score b {
   color: var(--va-text);
 }
-
-/* ---- quieter button height (36px visible, 44px to tap) ---- */
 .va-go,
 .va-row--top .va-go {
   min-height: 44px;
@@ -1554,8 +1316,6 @@ ul {
 .va-go::after {
   inset: 4px 0;
 }
-
-/* ---- filter tabs as a segmented control, distinct from the header tabs ---- */
 .va-ftabs {
   display: inline-flex;
   gap: 4px;
@@ -1584,15 +1344,14 @@ ul {
 }
 @media (max-width: 599px) {
   .va-ftabs {
-    display: flex;
+      display: flex;
   }
   .va-ftab {
-    min-height: 40px;
-    padding: 0 4px;
-    font-size: 13px;
+      min-height: 40px;
+      padding: 0 4px;
+      font-size: 13px;
   }
 }
-
 .va-go,
 .va-row--top .va-go {
   padding: 0 14px;
@@ -1604,13 +1363,10 @@ ul {
 .va-go::after {
   inset: 0;
 }
-
 :root {
   --va-radius: 6px;
   --va-radius-lg: 10px;
 }
-
-/* even side padding inside the board; one number size for every row */
 .va-row,
 .va-row--top {
   padding-left: 16px;
@@ -1635,16 +1391,14 @@ ul {
 @media (min-width: 600px) {
   .va-row,
   .va-row--top {
-    padding-left: 24px;
-    padding-right: 24px;
+      padding-left: 24px;
+      padding-right: 24px;
   }
   .va-listhead {
-    padding-left: 24px;
-    padding-right: 24px;
+      padding-left: 24px;
+      padding-right: 24px;
   }
 }
-
-/* same columns for every row so logos and names line up */
 .va-row,
 .va-row--top {
   grid-template-columns: 24px 84px minmax(0, 1fr) auto;
@@ -1657,27 +1411,26 @@ ul {
 @media (min-width: 600px) {
   .va-row,
   .va-row--top {
-    grid-template-columns: 32px 120px minmax(0, 1fr) 104px 104px;
+      grid-template-columns: 32px 120px minmax(0, 1fr) 104px 104px;
   }
   .va-listhead {
-    grid-template-columns: 32px 120px minmax(0, 1fr) 104px 104px;
+      grid-template-columns: 32px 120px minmax(0, 1fr) 104px 104px;
   }
   .va-row .va-ico,
   .va-row--top .va-ico {
-    width: 120px;
-    height: 44px;
+      width: 120px;
+      height: 44px;
   }
 }
-
 @media (max-width: 599px) {
   .va-row,
   .va-row--top {
-    grid-template-columns: 30px 76px minmax(0, 1fr) auto;
-    column-gap: 10px;
+      grid-template-columns: 30px 76px minmax(0, 1fr) auto;
+      column-gap: 10px;
   }
   .va-row .va-ico,
   .va-row--top .va-ico {
-    width: 76px;
-    height: 34px;
+      width: 76px;
+      height: 34px;
   }
 }

@@ -1,10 +1,10 @@
-// Downloads vendor app icons and horizontal logos, then re-encodes them with sharp
+// Downloads vendor horizontal logos, then re-encodes them with sharp
 // (metadata removed, uniform sizes). Originals stay in .cache/raw and are never committed.
 // Usage: node scripts/kite.mjs [vendorId ...]
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { ROOT, readJSON, getText, getBuffer, sleep } from './lib/util.mjs';
+import { ROOT, readJSON, getBuffer, sleep } from './lib/util.mjs';
 
 const OUT = path.join(ROOT, 'static', 'v');
 const RAW = path.join(ROOT, '.cache', 'raw');
@@ -13,29 +13,6 @@ fs.mkdirSync(RAW, { recursive: true });
 
 const only = new Set(process.argv.slice(2));
 const { vendors } = readJSON('data/vendors.json');
-
-async function iconSource(v) {
-  if (v.appStoreId) {
-    const j = JSON.parse(await getText(`https://itunes.apple.com/lookup?id=${v.appStoreId}&country=kr`));
-    const url = j.results?.[0]?.artworkUrl512;
-    if (url) return url;
-  }
-  if (v.playId) {
-    const html = await getText(`https://play.google.com/store/apps/details?id=${encodeURIComponent(v.playId)}&hl=ko&gl=KR`);
-    const m = html.match(/<meta property="og:image" content="([^"]+)"/);
-    if (m) return m[1].replace(/=s\d+.*$/, '') + '=s512';
-  }
-  return null;
-}
-
-async function saveIcon(v) {
-  const src = await iconSource(v);
-  if (!src) return 'none';
-  const buf = await getBuffer(src);
-  fs.writeFileSync(path.join(RAW, `${v.id}-icon`), buf);
-  await sharp(buf).resize(128, 128, { fit: 'cover' }).webp({ quality: 86 }).toFile(path.join(OUT, `${v.id}.webp`));
-  return 'ok';
-}
 
 async function saveLogo(v) {
   if (!v.logoSrc) return 'none';
@@ -91,11 +68,6 @@ for (const v of vendors) {
   if (v.status === 'excluded') continue;
   const row = { id: v.id };
   try {
-    row.icon = await saveIcon(v);
-  } catch (e) {
-    row.icon = 'fail';
-  }
-  try {
     row.logo = await saveLogo(v);
   } catch (e) {
     row.logo = 'fail ' + e.message;
@@ -103,4 +75,4 @@ for (const v of vendors) {
   report.push(row);
   await sleep(500);
 }
-for (const r of report) console.log(`${r.id}\ticon:${r.icon}\tlogo:${r.logo}`);
+for (const r of report) console.log(`${r.id}\tlogo:${r.logo}`);

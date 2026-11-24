@@ -109,7 +109,7 @@ function inspect() {
     if (visible(el) && lines(el) > 1) out.push(`label wraps "${el.textContent.trim().slice(0, 16)}"`);
   }
   // children stay inside their row/card
-  for (const box of document.querySelectorAll('.va-row, .va-prow, .va-card, .va-other, .va-faq__item, .va-mini, .va-vstat')) {
+  for (const box of document.querySelectorAll('.va-row, .va-prow, .va-card, .va-other, .va-faq__item, .va-vstat')) {
     if (!visible(box)) continue;
     const b = box.getBoundingClientRect();
     for (const c of box.querySelectorAll('*')) {
@@ -241,10 +241,6 @@ for (const [label, dir, ranking] of [
   await pj.goto(url);
   const rows = await pj.locator('.va-list > .va-row').count();
   if (rows < Math.min(10, ranking.list.length)) fail(`${label} no-js`, `only ${rows} rows`);
-  if (await pj.locator('.va-more').count()) {
-    await pj.locator('.va-more > summary').click();
-    if (!(await pj.locator('.va-more .va-mini').first().isVisible())) fail(`${label} no-js`, 'other vendors list does not open');
-  }
   if (await pj.locator('.va-totop').isVisible()) fail(`${label} no-js`, 'back-to-top shown without script');
   const goCount = await pj.locator('.va-row .va-go[href]').count();
   if (goCount < 1) fail(`${label} no-js`, 'no site links');

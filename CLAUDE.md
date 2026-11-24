@@ -11,7 +11,7 @@
 | 지표 수집 | `npm run collect` (`data/metrics.json`에 스냅숏 추가) |
 | 순위 계산 | `npm run score` (환경 변수 `SCORE_PROFILE` 필요, 로컬 미리보기는 `--profile <파일> --out .out/preview`) |
 | 혜택 문구 읽기 | `npm run perks` (바뀐 곳만 `data/vendors.json` 수정) |
-| 업체 아이콘·로고 받기 | `npm run assets [업체id ...]` (원본은 `.cache/raw`, 결과만 `static/v`) |
+| 업체 로고 받기 | `npm run assets [업체id ...]` (원본은 `.cache/raw`, 결과만 `static/v/<id>-wide.webp`) |
 | 빌드 | `npm run build` (미리보기는 `RANKING_FILE=.out/preview/ranking.json npm run build`) |
 | 규칙 테스트 | `npm test` |
 | 화면 검사 | `npm run view` (5개 폭 × 실제·극단 데이터, 스크린샷은 `.out/shots`) |
