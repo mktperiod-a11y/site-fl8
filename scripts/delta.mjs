@@ -138,7 +138,7 @@ function header(depth, current) {
         'a',
         { class: 'va-logo', href: r },
         h('img', { src: `${r}a/brand/mark.svg?v=${V.mark}`, width: 26, height: 26, alt: '' }),
-        h('span', plain, h('b', site.brandAccent)),
+        site.brandAccent ? h('span', plain, h('b', site.brandAccent)) : h('span', site.brand),
       ),
       h(
         'nav',
